@@ -254,3 +254,9 @@ extern float YHCalcTextWidth(UIFont *font, NSString* text, CGFloat width);
 extern float YHCalcTextHight(UIFont *font, NSString* text, CGFloat width);
 /** 获取拼音首字母(传入汉字字串,返回大写拼音首字母)*/
 extern NSString *firstCharactor(NSString *string);
+
+
+
+#pragma mark - ************************************** expand
+// 当前网络监听(具体需要引入 AFNetworkReachabilityManager.h 类，详见实现方法中)
+// extern NSString *AFStringFromNetWorkReachabilityStatus(AFNetworkReachabilityStatus status);
