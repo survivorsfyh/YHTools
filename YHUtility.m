@@ -672,3 +672,21 @@ NSString *firstCharactor(NSString *string) {
     /** 获取并返回首字母*/
     return [pinYin substringToIndex:1];
 }
+
+
+
+#pragma mark - Monitor current network status(注:若需要则需要引用头文件"#import <AFNetworkReachabilityManager.h>")
+//NSString *AFStringFromNetWorkReachabilityStatus(AFNetworkReachabilityStatus status) {
+//    switch (status) {
+//        case AFNetworkReachabilityStatusNotReachable:
+//            return NSLocalizedStringFromTable(@"Not Reachable", @"AFNetworking", nil);
+//        case AFNetworkReachabilityStatusReachableViaWWAN:
+//            return NSLocalizedStringFromTable(@"Reachable via WWAN", @"AFNetworking", nil);
+//        case AFNetworkReachabilityStatusReachableViaWiFi:
+//            return NSLocalizedStringFromTable(@"Reachable via WiFi", @"AFNetworking", nil);
+//        case AFNetworkReachabilityStatusUnknown:
+//        default:
+//            return NSLocalizedStringFromTable(@"Unknow", @"AFNetworking", nil);;
+//    }
+//}
+
