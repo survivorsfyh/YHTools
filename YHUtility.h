@@ -258,5 +258,10 @@ extern NSString *firstCharactor(NSString *string);
 
 
 #pragma mark - ************************************** expand
-// 当前网络监听(具体需要引入 AFNetworkReachabilityManager.h 类，详见实现方法中)
+/**
+ 当前网络监听(具体需要引入 AFNetworkReachabilityManager.h 类，详见实现方法中)
+ 
+ 调用：
+ NSString *networkState = AFStringFromNetWorkReachabilityStatus([[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus]);
+*/
 // extern NSString *AFStringFromNetWorkReachabilityStatus(AFNetworkReachabilityStatus status);
