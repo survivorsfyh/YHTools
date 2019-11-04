@@ -156,6 +156,10 @@
  @param controller 当前 VC 控件
  */
 - (void)openPhotoLibraryWithController:(UIViewController *)controller {
+    if (@available(iOS 11, *)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }
+
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.allowsEditing = YES;
