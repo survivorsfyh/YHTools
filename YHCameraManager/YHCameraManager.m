@@ -166,6 +166,27 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         imagePicker.delegate = self;
         
+        // 配置
+        UIColor *navBarTintColor = nil;
+        UIColor *navBarBgColor = nil;
+        UIColor *navBarTitleColor = nil;
+        BOOL allowsEditing = NO;
+
+        navBarTintColor = config && config.navBarTintColor ? config.navBarTintColor : [UIColor colorWithRed:0.21 green:0.57 blue:0.98 alpha:1.0];
+        navBarBgColor = config && config.navBarBgColor ? config.navBarBgColor : [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0];
+        navBarTitleColor = config && config.navBarTitleColor ? config.navBarTitleColor : [UIColor blackColor];
+        allowsEditing = config && config.allowsEditing;
+
+        imagePicker.allowsEditing = allowsEditing;
+        [imagePicker.navigationBar setBarTintColor:navBarBgColor];
+        [imagePicker.navigationBar setTranslucent:NO];
+        [imagePicker.navigationBar setTintColor:navBarTintColor];
+        [imagePicker.navigationBar setBackgroundColor:navBarBgColor];
+        // 设置字体颜色
+        NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+        attrs[NSForegroundColorAttributeName] = navBarTitleColor;
+        [imagePicker.navigationBar setTitleTextAttributes:attrs];
+        
         [controller presentViewController:imagePicker animated:YES completion:^{
             NSLog(@"调用了 --- 相册");
         }];
