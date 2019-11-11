@@ -30,6 +30,17 @@
 
 @property (nonatomic, assign) id <YHCameraManagerDelegate> delegate;
 
+/** 导航条颜色 */
+@property(nonatomic, strong) UIColor *navBarBgColor;
+/** item的tintcolor */
+@property(nonatomic, strong) UIColor *navBarTintColor;
+/** titleView的字体颜色 */
+@property(nonatomic, strong) UIColor *navBarTitleColor;
+/** 图片是否可以编辑 */
+@property(nonatomic, assign) BOOL allowsEditing;
+
+
+
 /** 单例对象*/
 + (instancetype)shareInstance;
 
