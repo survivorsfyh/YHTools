@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#pragma mark - ************************************** Basic
+/**
+ * 捕获程序异常
+ * 调用：NSSetUncaughtExceptionHandler(&YHGetException);
+ */
+extern void YHGetException(NSException *exception);
+
+
+
 #pragma mark - ************************************** MD5
 /** MD5 加密*/
 extern NSString *YHGenerateMD5KeyNew(NSString *originalString);
