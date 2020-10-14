@@ -56,9 +56,15 @@
  @param controller  当前 VC 控件
  */
 - (void)openCameraOrPhotoLibraryWithCameraDeviceType:(NSString *)deviceType AndController:(UIViewController *)controller {
+    UIAlertControllerStyle style = UIAlertControllerStyleActionSheet; // 注：UIAlertControllerStyleActionSheet 仅支持 iPhone，iPad 需使用 UIAlertControllerStyleAlert
+    // 判断是否为iPhone   #define kISiPhone   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    // 判断是否为iPad     #define kISiPad     (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (kISiPad) {
+        style = UIAlertControllerStyleAlert;
+    }
     UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:nil
                                                                       message:nil
-                                                               preferredStyle:UIAlertControllerStyleActionSheet];
+                                                               preferredStyle:style];
     
     kWeakSelf(self);
     [alertCon addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
