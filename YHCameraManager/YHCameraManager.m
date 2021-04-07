@@ -223,7 +223,7 @@
         crosshairs.contentMode = UIViewContentModeCenter;
         [overLayView addSubview:crosshairs];
         //在叠加视图上自定义一个拍照按钮
-        UIButton *takePhotoBtn=[UIButton buttonWithType:UIButtonTypeCustom]; // 人保寿险易服务 首页 服务大厅 保单变更
+        UIButton *takePhotoBtn=[UIButton buttonWithType:UIButtonTypeCustom];
         [takePhotoBtn setFrame:CGRectMake(10, 10, 40, 40)];
         [takePhotoBtn setTitle:@"选取图片" forState:UIControlStateNormal];
         [takePhotoBtn addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchUpInside];
@@ -244,7 +244,6 @@
 }
 
 - (void)takePhoto:(id)sender{
-    NSLog(@"111111111");
     NSLog(@"%@", sender);
 }
 
