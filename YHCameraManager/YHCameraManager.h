@@ -30,25 +30,21 @@
 
 @property (nonatomic, assign) id <YHCameraManagerDelegate> delegate;
 
-/** 导航条颜色 */
-@property(nonatomic, strong) UIColor *navBarBgColor;
-/** item的tintcolor */
-@property(nonatomic, strong) UIColor *navBarTintColor;
-/** titleView的字体颜色 */
-@property(nonatomic, strong) UIColor *navBarTitleColor;
-/** 图片是否可以编辑 */
-@property(nonatomic, assign) BOOL allowsEditing;
-
-
-
 /** 单例对象*/
 + (instancetype)shareInstance;
+
+/// 获取相机权限状态
+- (BOOL)getCameraPermissionsState;
+
+/// 检测相机权限是否开始并弹出是否去开启
+/// @param controller 视图控件
+- (void)getCameraPermissionsWithController:(UIViewController *)controller;
 
 /**
  调用相机功能
 
- @param cameraType 相机类型
- @param deviceType 设备类型
+ @param cameraType 相机类型（相机 & 相册）
+ @param deviceType 设备类型（前置摄像头 & 后置摄像头）
  @param controller 控件 VC
  */
 - (void)callCameraWithCameraType:(NSString *)cameraType AndDeviceType:(NSString *)deviceType AndController:(UIViewController *)controller;
@@ -62,12 +58,20 @@
 - (void)openCameraOrPhotoLibraryWithCameraDeviceType:(NSString *)deviceType AndController:(UIViewController *)controller;
 
 /**
- 调用相机拍照
+ 调用相机拍照（Push 新页面）
  
  @param deviceType 摄像头设备类型(默认后置摄像头,前置摄像头需将 deviceType 初始值设置为 @"Front")
  @param controller 当前 VC 控件
  */
 - (void)openCameraWithCameraDeviceType:(NSString *)deviceType AndController:(UIViewController *)controller;
+
+/**
+ 调用相机拍照（当前视图）
+ 
+ @param deviceType 摄像头设备类型(默认后置摄像头,前置摄像头需将 deviceType 初始值设置为 @"Front")
+ @param controller 当前 VC 控件
+ */
+- (void)openCameraWithCameraDeviceType:(NSString *)deviceType AndCurrentControllerView:(UIViewController *)controller;
 
 /**
  调用相机拍摄
